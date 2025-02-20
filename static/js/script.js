@@ -2,6 +2,13 @@ document.getElementById("form").addEventListener("submit", function(event) {
     event.preventDefault();
     
     let word = document.getElementById("wordInput").value.toUpperCase();
+    
+    // Verificar se a palavra contém espaços
+    if (word.includes(" ")) {
+        alert("A palavra não pode conter espaços.");
+        return;  // Impede que o restante do código seja executado
+    }
+
     let resultDiv = document.getElementById("result");
     resultDiv.innerHTML = "";  // Limpar resultados anteriores
 
